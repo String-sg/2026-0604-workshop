@@ -289,24 +289,28 @@ How does this connect back to "Who am I?" / "Where do I want to go?" / "How do I
 
 ---
 
-## 📋 FALLBACK DATA (if URL fetch fails)
+📋 FALLBACK DATA
+Use these only if URL fetch fails. Replace Prompt 1 in your scenario with the matching block below. All data is from GES 2024 + supporting MOE/MOM datasets, pulled 1 June 2026.
 
-Paste this in place of Prompt 1 for the HERO scenario:
-
-```
+🎯 HERO Fallback
+Paste this in place of Prompt 1:
 Use the analysis tool. Here's real Singapore Graduate Employment Survey 2024 data:
 
 | Course | University | Median (S$) | 25th %ile | 75th %ile | FT Employment (%) |
 |--------|------------|------------:|----------:|----------:|------------------:|
 | Computer Science | NUS | 6500 | 5600 | 7500 | 87.8 |
 | Law (Cum Laude+) | SMU | 7000 | 6500 | 7000 | 95.9 |
-| Information Security | NUS | 6110 | 5400 | 7000 | 88.2 |
-| Computer Engineering | NTU | 5500 | 4800 | 6200 | 89.9 |
-| Data Science & AI | NTU | 5450 | 4800 | 6100 | 76.0 |
+| Bachelor of Laws | NUS | 7000 | 6200 | 7000 | 90.4 |
+| Computer Science (Cum Laude+) | SMU | 6400 | 5735 | 7500 | 97.3 |
+| Information Security | NUS | 6110 | 5500 | 7049 | 88.2 |
+| Information Systems | NUS | 6000 | 5200 | 6955 | 87.5 |
+| Computer Engineering | NTU | 5500 | 4900 | 6500 | 89.9 |
 | Engineering Science | NUS | 5500 | 4800 | 6200 | 81.0 |
+| Data Science & AI | NTU | 5450 | 4800 | 6100 | 76.0 |
 | Business Analytics | NUS | 5400 | 4700 | 6000 | 87.8 |
 | Business Admin | NUS | 5100 | 4500 | 5800 | 81.8 |
 | Architecture | NUS | 4995 | 4500 | 5500 | 94.1 |
+| Arts (with Education) | NTU | 5000 | 4500 | 5500 | 100.0 |
 | Accountancy | NTU | 4350 | 4100 | 4500 | 93.2 |
 | Bachelor of Arts | NUS | 4300 | 3700 | 5000 | 74.2 |
 | Social Sciences | NUS | 4210 | 3700 | 4800 | 73.9 |
@@ -316,12 +320,116 @@ Use the analysis tool. Here's real Singapore Graduate Employment Survey 2024 dat
 | Sports Science | NTU | 4000 | 3500 | 4500 | 55.1 |
 | Communication Studies | NTU | 3880 | 3500 | 4300 | 70.3 |
 | Linguistics | NTU | 3850 | 3600 | 4050 | 62.3 |
+| Social Work | SUSS | 3850 | 3500 | 4100 | 74.6 |
 | Landscape Architecture | NUS | 3800 | 3500 | 4330 | 52.9 |
+| Early Childhood Education | SUSS | 3600 | 3300 | 3850 | 80.4 |
 | Art, Design & Media | NTU | 3500 | 3200 | 4000 | 47.1 |
 
 Set N = 20. Sort by median desc, employment desc (tiebreak). Show all rows. Then proceed with Prompt 2 (Visualise).
-```
 
+📚 Scenario A Fallback — JC Parent
+Paste this in place of Prompt 1:
+Use the analysis tool. Here's real GES 2024 data for Computing, Law, and Medicine degrees:
+
+| University | Degree | Median | 25th | 75th | FT Emp % |
+|---|---|---:|---:|---:|---:|
+| NUS | Bachelor of Laws | 7000 | 6200 | 7000 | 90.4 |
+| SMU | Law | 7000 | 6000 | 7000 | 95.9 |
+| SMU | Law - Cum Laude and above | 7000 | 6500 | 7000 | 95.9 |
+| NUS | Bachelor of Computing (Computer Science) | 6500 | 5600 | 7500 | 87.8 |
+| SMU | Computer Science - Cum Laude and above | 6400 | 5735 | 7500 | 97.3 |
+| NTU | Double Degree: Business & Computer Engineering | 6250 | 5500 | 7000 | 94.3 |
+| NUS | Bachelor of Computing (Information Security) | 6110 | 5500 | 7049 | 88.2 |
+| NUS | Bachelor of Computing (Information Systems) | 6000 | 5200 | 6955 | 87.5 |
+| SMU | Computer Science | 6000 | 4850 | 7000 | 94.3 |
+| NTU | Computer Science | 5500 | 4900 | 6500 | 79.6 |
+| SIT | BSc Honours in Computer Science | 5150 | 4900 | 5917 | 81.8 |
+| SUTD | BEng Computer Science and Design | 5000 | 4500 | 5800 | 81.5 |
+| NUS | Bachelor of Medicine and Bachelor of Surgery | N.A. | N.A. | N.A. | N.A. |
+| NTU | Medicine | N.A. | N.A. | N.A. | N.A. |
+
+Note: NUS/NTU Medicine are suppressed at 6-month survey (housemen aren't surveyed yet). Real comparison happens 1 year post-housemanship — typically ~$6,500 median.
+
+Now proceed with Prompt 2 (Compose for parents).
+
+🏗 Scenario B Fallback — Poly Pathway
+Paste this in place of Prompt 1:
+Use the analysis tool. Here's real data from data.gov.sg (poly intake) and MOM (sector employment), 2014–2024:
+
+POLY INTAKE (total students enrolled per year, sum across all 5 polys):
+
+| Year | Info Tech | Eng Sci | Health Sci | Biz Admin | Applied Arts |
+|------|----------:|--------:|-----------:|----------:|-------------:|
+| 2014 | 4527 | 8588 | 3935 | 9816 | 3306 |
+| 2015 | 4111 | 9022 | 4686 | 7933 | 2760 |
+| 2017 | 3798 | 8419 | 4500 | 7765 | 3032 |
+| 2019 | 3381 | 7771 | 4493 | 6947 | 2860 |
+| 2021 | 3364 | 6938 | 4105 | 6212 | 2923 |
+| 2023 | 3895 | 7136 | 4057 | 6067 | 3131 |
+| 2024 | 4086 | 6591 | 3694 | 6389 | 2992 |
+
+SECTOR EMPLOYMENT ('000 persons, year-end):
+
+| Year | Info & Comms | Manufacturing | Finance | Community/Social | Accom & Food |
+|------|-------------:|--------------:|--------:|-----------------:|-------------:|
+| 2014 | 129.0 | 535.9 | 177.4 | 750.4 | 240.8 |
+| 2017 | 139.6 | 483.1 | 194.2 | 815.9 | 257.9 |
+| 2019 | 154.8 | 487.2 | 201.4 | 853.6 | 271.0 |
+| 2021 | 171.8 | 450.2 | 209.2 | 846.8 | 246.5 |
+| 2023 | 184.1 | 485.6 | 229.1 | 936.6 | 271.5 |
+
+(Sector data ends at 2023 in source dataset.)
+
+Now proceed with Prompt 3 (Visualise) — two side-by-side line charts.
+
+🎨 Scenario C Fallback — Passion vs Paycheck
+Paste this in place of Prompt 1:
+Use the analysis tool. Here's real GES 2024 data for creative vs practical degree paths:
+
+| Group | University | Degree | 25th | Median | 75th | Spread | FT % |
+|---|---|---|---:|---:|---:|---:|---:|
+| CREATIVE | NUS | Bachelor of Arts | 3600 | 4300 | 6250 | 2650 | 74.2 |
+| CREATIVE | NUS | Bachelor of Arts with Honours | 4200 | 4557 | 5950 | 1750 | 73.3 |
+| CREATIVE | NUS | Industrial Design | 3500 | 4025 | 4500 | 1000 | 60.0 |
+| CREATIVE | NTU | Art, Design and Media | 3075 | 3500 | 4000 | 925 | 47.1 |
+| CREATIVE | NTU | Communication Studies | 3500 | 3880 | 4400 | 900 | 70.3 |
+| CREATIVE | NUS | Architecture | 4535 | 4995 | 5400 | 865 | 94.1 |
+| CREATIVE | NUS | Landscape Architecture | 3500 | 3800 | 4330 | 830 | 52.9 |
+| CREATIVE | NTU | Linguistics and Multilingual Studies | 3600 | 3850 | 4050 | 450 | 62.3 |
+| PRACTICAL | NUS | Computer Science | 5600 | 6500 | 7500 | 1900 | 87.8 |
+| PRACTICAL | SMU | Computer Science - Cum Laude+ | 5735 | 6400 | 7500 | 1765 | 97.3 |
+| PRACTICAL | NTU | Computer Science | 4900 | 5500 | 6500 | 1600 | 79.6 |
+| PRACTICAL | SMU | Accountancy - Cum Laude+ | 4300 | 4500 | 5403 | 1103 | 95.0 |
+| PRACTICAL | NTU | Accountancy | 4100 | 4350 | 4500 | 400 | 93.2 |
+| PRACTICAL | NUS | Nursing (Hons) | 3880 | 4050 | 4250 | 370 | 94.3 |
+| PRACTICAL | SMU | Law - Cum Laude+ | 6500 | 7000 | 7000 | 500 | 95.9 |
+
+Sort within each group by spread (75th - 25th) descending.
+
+Now proceed with Prompt 2 (Visualise).
+
+❤️ Scenario D Fallback — Mission Jobs
+Paste this in place of Prompt 1:
+Use the analysis tool. Here's real GES 2024 data for mission-job-adjacent degrees:
+
+| University | Degree | Median (S$) | FT Employment (%) |
+|---|---|---:|---:|
+| NTU | Arts (with Education) | 5000 | 100.0 |
+| NTU | Science (with Education) | 5000 | 100.0 |
+| SIT | BSc Honours in Nursing | 4150 | 87.2 |
+| NUS | Bachelor of Science (Nursing) (Hons) | 4050 | 94.3 |
+| NUS | Bachelor of Science (Nursing) | 3950 | 83.4 |
+| SUSS | Bachelor of Social Work | 3850 | 74.6 |
+| SUSS | Bachelor of Early Childhood Education | 3600 | 80.4 |
+
+Mission jobs NOT in this dataset (typical SG starting pay 2025):
+- MOE teacher (fresh PGDE grad): ~S$3,625 (source: MOE Careers)
+- Registered nurse (fresh grad, public hospital): ~S$3,500 (source: Payscale Singapore, MOH guidelines)
+- Social worker (fresh degree grad, NCSS-affiliated agency): ~S$3,900 (source: NCSS salary guidelines)
+
+For comparison, the "market darling": NUS Computer Science 2024 = $6,500 median, $7,500 at 75th percentile, 87.8% FT employment.
+
+Now proceed with Prompt 2 (Compose comparison).
 **Mission jobs not in dataset (typical SG starting pay 2025):**
 - MOE teacher (fresh PGDE grad): ~S$3,625
 - Registered nurse (fresh grad, public hospital): ~S$3,500
